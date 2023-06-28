@@ -1,0 +1,120 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "user": "amy313",
+      "password": "pancito"
+    },
+    {
+      "id": 2,
+      "user": "azucar",
+      "password": "azucar"
+    },
+    {
+      "id": 3,
+      "user": "usuario",
+      "password": "12345678"
+    },
+    {
+      "id": 4,
+      "user": "user123",
+      "password": "12345"
+    },
+    {
+      "id": 5,
+      "user": "huguito",
+      "password": "aaaaa"
+    },
+    {
+      "id": 6,
+      "user": "pancito",
+      "password": "aaaaa"
+    },
+    {
+      "id": 7,
+      "user": "osito",
+      "password": "osito"
+    },
+    {
+      "id": 8,
+      "user": "amy313b",
+      "password": "pancito"
+    },
+    {
+      "id": 9,
+      "user": "amy313hhh",
+      "password": "pato123"
+    },
+    {
+      "id": 10,
+      "user": "amy313q",
+      "password": "pancito"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 4,
+      "idUser": "1",
+      "title": "agua pan",
+      "date": "2023-12-12T12:30",
+      "category": "Universidad",
+      "type": "In Progress"
+    },
+    {
+      "id": 8,
+      "idUser": "1",
+      "title": "pancito",
+      "date": "2023-06-30T20:40",
+      "category": "Universidad",
+      "type": "To Do"
+    },
+    {
+      "id": 9,
+      "idUser": "1",
+      "title": "Comprar pan",
+      "date": "2023-06-30T20:40",
+      "category": "Universidad",
+      "type": "Done"
+    },
+    {
+      "id": 10,
+      "idUser": "1",
+      "title": "comer",
+      "date": "2023-06-29T12:30",
+      "category": "Hogar",
+      "type": "Done"
+    },
+    {
+      "id": 13,
+      "idUser": "1",
+      "title": "pan",
+      "date": "2023-07-01T15:09",
+      "category": "Hogar",
+      "type": "In Progress"
+    },
+    {
+      "id": 14,
+      "idUser": "1",
+      "title": "ayudia",
+      "date": "2023-07-02T12:12",
+      "category": "Personal",
+      "type": "In Progress"
+    },
+    {
+      "id": 15,
+      "idUser": "1",
+      "title": "uwuw",
+      "date": "2023-06-14T14:30",
+      "category": "Ocio",
+      "type": "To Do"
+    },
+    {
+      "id": 16,
+      "idUser": "1",
+      "title": "Comprar panqueques",
+      "date": "2023-06-12T16:30",
+      "category": "Ocio",
+      "type": "To Do"
+    }
+  ]
+}
