@@ -21,9 +21,7 @@ const Table = ({ category }) => {
   const getClient = async () => {
     const { data } = await getTasks();
     const tasksUser = data.filter((task) => task.idUser == id);
-    console.log(id);
     if (tasks.length !== tasksUser.length) {
-      console.log(tasks.length, "--- ", tasksUser);
       setTasks(tasksUser);
     }
   };
@@ -37,7 +35,6 @@ const Table = ({ category }) => {
   }, []);
 
   const onCheckSubmit = async (data) => {
-    console.log(data, "desde listas");
     if (!edit) {
       addTask({
         id: Number(uuid()),
@@ -78,7 +75,6 @@ const Table = ({ category }) => {
   };
 
   const onDelete = (id) => {
-    console.log(tasks);
 
     setTasks(
       tasks.filter((note) => {
@@ -86,7 +82,6 @@ const Table = ({ category }) => {
       })
     );
     deleteTask(id);
-    console.log(tasks);
   };
 
   return (

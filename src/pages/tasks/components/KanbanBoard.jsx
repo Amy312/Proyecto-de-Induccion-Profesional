@@ -11,9 +11,7 @@ const KanbanBoard = () => {
   const getClient = async () => {
     const { data } = await getTasks();
     const tasksUser = data.filter((task) => task.idUser == id);
-    console.log(id, "desde kanban");
     if (tasks.length !== tasksUser.length) {
-     // console.log(tasks.length, "--- ", tasksUser);
       setTasks(tasksUser);
     }
   };
@@ -27,13 +25,10 @@ const KanbanBoard = () => {
   });
 
   useEffect(() => {
-    //setId(localStorage.setItem("id",id));
-    //setAuth(localStorage.setItem("auth",auth));
     f();
   }, []);
 
   const onDelete = (id) => {
-    console.log(tasks);
 
     setTasks(
       tasks.filter((note) => {
@@ -41,7 +36,6 @@ const KanbanBoard = () => {
       })
     );
     deleteTask(id);
-    console.log(tasks);
   };
 
   const onDragEnd = (result) => {
@@ -52,7 +46,6 @@ const KanbanBoard = () => {
     const draggedTask = updatedTasks.find(
       (task) => task.id == result.draggableId
     );
-    console.log("el result es: ", result, draggedTask);
 
     if (source.droppableId == destination.droppableId) {
       draggedTask.type = destination.droppableId;

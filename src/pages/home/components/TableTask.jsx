@@ -6,22 +6,19 @@ import { useTask } from "../../../context/ContextProvider";
 import { deleteTask, updateTask } from "./../../../services/tasksService";
 
 const TableTask = (props) => {
-  const { selectedDay, classNames, notes, setNotes, f } = props;
+  const { selectedDay, classNames, notes, setNotes, setChange, change, f } = props;
   const { id, edit } = useTask();
 
-  const [change, setChange] = useState(false);
-  console.log(edit);
   const [viewForm, setViewForm] = useState(edit);
   const addTask = () => {
     setViewForm(!viewForm);
+    setChange(!change);
   };
-  console.log(viewForm);
   const selectedDayMeetings = notes.filter(
     (task) => id == task.idUser && isSameDay(parseISO(task.date), selectedDay)
   );
 
   useEffect(() => {
-    console.log("cambio");
   }, [selectedDay]);
 
   useEffect(() => {
@@ -49,6 +46,7 @@ const TableTask = (props) => {
             setViewForm={setViewForm}
             change={change}
             setChange={setChange}
+            f = {f}
           />
         )}
 

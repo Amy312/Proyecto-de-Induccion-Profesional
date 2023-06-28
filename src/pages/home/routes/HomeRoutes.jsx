@@ -8,7 +8,6 @@ import TempPage from "./../../timer/TempPage";
 
 export const HomeRoutes = () => {
   const { auth } = useTask();
-  //console.log(auth, " --- desde home routes");
   return (
     <Routes>
       <Route
@@ -50,7 +49,6 @@ export const HomeRoutes = () => {
           path="/*"
           element={
             <GuardedRoute auth={auth}>
-              {console.log("Esta sonsera viene aqui")}
               <Navigate to="/home" />
             </GuardedRoute>
           }

@@ -5,9 +5,8 @@ import { Fragment, useState } from "react";
 import { useDispatch } from "../../../context/ContextProvider";
 import { types } from "../../../context/taskReducer";
 
-const Task = ({ task, classNames, onDelete, onEdit, setViewForm}) => {
+const Task = ({ task, classNames, onDelete, onEdit, setViewForm }) => {
   const startDateTime = parseISO(task.date);
-  //console.log(task)
   const [color, setColor] = useState(
     task.type === "To Do"
       ? "bg-slate-200 border-slate-400"
@@ -15,11 +14,9 @@ const Task = ({ task, classNames, onDelete, onEdit, setViewForm}) => {
       ? "bg-emerald-300"
       : "bg-yellow-400 border-yellow-600"
   );
-  //setColor(task.type === "TODO" ? "bg-slate-200" : task.type === "DONE" ? "bg-emerald-300" : "bg-yellow-400" )
   const dispatch = useDispatch();
 
   const changeColor = () => {
-    console.log("cambiar");
     if (color === "bg-slate-200 border-slate-400") {
       task.type = "In Progress";
       setColor("bg-yellow-400 border-yellow-600");

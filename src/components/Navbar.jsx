@@ -22,7 +22,6 @@ const Navbar = () => {
     const {data } = await getClientById(id);
   
     setUser(data)
-    console.log(user);
   } 
 
   useEffect(() => {

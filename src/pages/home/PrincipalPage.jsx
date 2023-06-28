@@ -15,9 +15,7 @@ const PrincipalPage = () => {
           <Outlet />
         </div>
       </div>
-      {/*<main className="mt-24 overflow-auto max-h-full">
-        <Outlet />
-  </main>*/}
+      
     </>
   );
 };

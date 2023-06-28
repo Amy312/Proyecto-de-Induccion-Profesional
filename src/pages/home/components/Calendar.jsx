@@ -21,6 +21,7 @@ const Calendar = (props) => {
     selectedDay,
     setSelectedDay,
     classNames,
+
   } = props;
 
   const { id } = useTask();

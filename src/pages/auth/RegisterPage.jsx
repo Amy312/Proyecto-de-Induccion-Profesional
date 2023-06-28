@@ -13,7 +13,6 @@ const RegisterPage = () => {
 
   const onAddSubmit = async (data) => {
     const clientsD = await getClients();
-    console.log("datos ", clientsD.data);
 
     const clientSize = clientsD.data.filter(
       (client) => client.user === data.newUsername
@@ -23,7 +22,7 @@ const RegisterPage = () => {
       addClient({
         id: Number(uuid()),
         user: data.newUsername,
-        password: data.pass
+        password: data.pass,
       });
       setError(false);
       navigate("/auth/login");
@@ -62,7 +61,10 @@ const RegisterPage = () => {
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
-                    Ingresa una contraseña {" "} <span className="text-sm font-light">Min. 5 caracteres</span>
+                    Ingresa una contraseña{" "}
+                    <span className="text-sm font-light">
+                      Min. 5 caracteres
+                    </span>
                   </label>
                   <input
                     type="password"

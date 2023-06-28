@@ -1,18 +1,17 @@
 import { useForm } from "react-hook-form";
 import { v4 as uuid } from "uuid";
 import { format } from "date-fns";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useTask } from "../../../context/ContextProvider";
 import { addTask, updateTask } from "../../../services/tasksService";
 import { types } from "../../../context/taskReducer";
 
 const AddForm = (props) => {
   const { register, handleSubmit, setValue } = useForm();
-  const { selectedDay, setViewForm, change, setChange } = props;
+  const { selectedDay, setViewForm, change, setChange, f } = props;
   const { id, edit, taskEdit } = useTask();
   const dispatch = useDispatch();
   const onCheckSubmit = async (data) => {
-    console.log(data);
     if (edit == false) {
       addTask({
         id: Number(uuid()),
@@ -47,6 +46,9 @@ const AddForm = (props) => {
     }
   }, []);
 
+  useEffect(() =>{
+    f();
+  },[change])
  
 
   return (

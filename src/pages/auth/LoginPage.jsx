@@ -1,10 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import Title from "../../components/Title";
-import {
-  TaskContext,
-  useDispatch,
-  useTask,
-} from "../../context/ContextProvider";
+import { useDispatch } from "../../context/ContextProvider";
 import { useForm } from "react-hook-form";
 import { types } from "../../context/taskReducer";
 import { getClients } from "../../services/clientsService";
@@ -27,13 +23,11 @@ const LoginPage = () => {
     );
 
     if (isCorrect.length === 1) {
-      //console.log(isCorrect[0].id,"dota" );
       dispatch({ type: types.login, id: isCorrect[0].id });
       localStorage.setItem("auth", true);
       setError(false);
-      console.log("cambio a true");
       navigate("/home");
-    }else{
+    } else {
       setError(true);
     }
   };

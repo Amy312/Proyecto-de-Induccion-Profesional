@@ -10,9 +10,8 @@ import {
   startOfToday,
 } from "date-fns";
 import { useEffect, useState } from "react";
-import { useDispatch, useTask } from "../../context/ContextProvider";
-import { getClientById } from "../../services/clientsService";
-import { types } from "../../context/taskReducer";
+import {  useTask } from "../../context/ContextProvider";
+
 import TableTask from "./components/TableTask";
 import { getTasks } from "../../services/tasksService";
 import Calendar from "./components/Calendar";
@@ -26,20 +25,17 @@ function classNames(...classes) {
 const HomePage = () => {
   const [tasksD, setTasksD] = useState([]);
   const { id , auth } = useTask();
-  console.log(auth, "desde hoem");
   if(auth === true){
   localStorage.setItem("id", id);
   }
-  //const [nid, setId] = useState(localStorage.getItem("id")?  localStorage.getItem("id") : id);
-//  const [nauth, setAuth] = useState(localStorage.getItem("auth")?  localStorage.getItem("auth") : auth);
 
   const today = startOfToday();
   const [selectedDay, setSelectedDay] = useState(today);
   const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
   const firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
+  const [change, setChange] = useState(false);
 
 
-  const dispatch = useDispatch();
 
   const days = eachDayOfInterval({
     start: startOfISOWeek(firstDayCurrentMonth),
@@ -58,15 +54,11 @@ const HomePage = () => {
 
   const getClient = async () => {
     const { data } = await getTasks();
-   // console.log(data, "data aaa");
    const tasksUser = data.filter(task => task.idUser==id);
-   console.log(id)
    if(tasksD.length !== tasksUser.length){
-    console.log(tasksD.length, "--- ", tasksUser)
     setTasksD(tasksUser);
     
    }
-    //console.log(tasksD);
   };
 
   const f = async () => {
@@ -74,16 +66,11 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    
     f();
-
   });
 
-
-
   useEffect( () => {
-    //setId(localStorage.setItem("id",id));
-    //setAuth(localStorage.setItem("auth",auth));
+
     f();
   }, [])
 
@@ -104,9 +91,12 @@ const HomePage = () => {
               selectedDay={selectedDay}
               setSelectedDay={setSelectedDay}
               classNames={classNames}
+              f={f}
             />
             <TableTask
             f = {f}
+              change = {change}
+              setChange = {setChange}
               selectedDay={selectedDay}
               classNames={classNames}
               notes={tasksD}
