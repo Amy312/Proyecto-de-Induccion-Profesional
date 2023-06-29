@@ -49,48 +49,26 @@
       "id": 10,
       "user": "amy313q",
       "password": "pancito"
+    },
+    {
+      "id": 11,
+      "user": "usuario1",
+      "password": "12345"
+    },
+    {
+      "id": 12,
+      "user": "prueba",
+      "password": "12345"
     }
   ],
   "tasks": [
-    {
-      "id": 4,
-      "idUser": "1",
-      "title": "agua pan",
-      "date": "2023-12-12T12:30",
-      "category": "Universidad",
-      "type": "In Progress"
-    },
     {
       "id": 8,
       "idUser": "1",
       "title": "pancito",
       "date": "2023-06-30T20:40",
       "category": "Universidad",
-      "type": "To Do"
-    },
-    {
-      "id": 13,
-      "idUser": "1",
-      "title": "pan",
-      "date": "2023-07-01T15:09",
-      "category": "Hogar",
-      "type": "In Progress"
-    },
-    {
-      "id": 14,
-      "idUser": "1",
-      "title": "ayudia",
-      "date": "2023-07-02T12:12",
-      "category": "Personal",
-      "type": "In Progress"
-    },
-    {
-      "id": 15,
-      "idUser": "1",
-      "title": "uwuw",
-      "date": "2023-06-14T14:30",
-      "category": "Ocio",
-      "type": "To Do"
+      "type": "Done"
     },
     {
       "id": 16,
@@ -106,54 +84,38 @@
       "title": "comer",
       "date": "2023-06-28T19:30",
       "category": "Hogar",
-      "type": "To Do"
-    },
-    {
-      "id": 18,
-      "idUser": 1,
-      "title": "tragar",
-      "date": "2023-06-22T17:15",
-      "category": "Hogar",
-      "type": "To Do"
-    },
-    {
-      "id": 19,
-      "idUser": 1,
-      "title": "uwuw",
-      "date": "2023-06-25T12:12",
-      "category": "Personal",
-      "type": "To Do"
-    },
-    {
-      "id": 20,
-      "idUser": 1,
-      "title": "vivir",
-      "date": "2023-06-10T12:30",
-      "category": "Ocio",
-      "type": "To Do"
+      "type": "In Progress"
     },
     {
       "id": 21,
       "idUser": 1,
-      "title": "aaaa",
+      "title": "Prueba",
       "date": "2023-06-29T12:12",
       "category": "Hogar",
+      "type": "In Progress"
+    },
+    {
+      "id": 25,
+      "idUser": 1,
+      "title": "comer con mi tia",
+      "date": "2023-07-01T10:00",
+      "category": "Personal",
       "type": "To Do"
     },
     {
-      "id": 22,
-      "idUser": "1",
-      "title": "12",
-      "date": "2023-06-26T12:12",
-      "category": "Hogar",
-      "type": "To Do"
+      "id": 26,
+      "idUser": 12,
+      "title": "actividad nueva",
+      "date": "2023-07-05T16:30",
+      "category": "Personal",
+      "type": "Done"
     },
     {
-      "id": 23,
-      "idUser": "1",
-      "title": "12",
-      "date": "2023-07-08T01:01",
-      "category": "Hogar",
+      "id": 27,
+      "idUser": 12,
+      "title": "nueva",
+      "date": "2023-06-30T13:40",
+      "category": "Personal",
       "type": "To Do"
     }
   ]

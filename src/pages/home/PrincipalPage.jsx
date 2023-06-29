@@ -1,11 +1,9 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import HomePage from "./HomePage";
-import { useEffect } from "react";
+
 
 const PrincipalPage = () => {
-  const { pathname } = useLocation();
-  console.log(pathname);
+  
   return (
     <>
       <div className=" h-full bottom-0 top-0 right-0 left-0">

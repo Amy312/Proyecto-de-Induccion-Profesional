@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import { useDispatch, useTask } from "../context/ContextProvider";
 import { types } from "../context/taskReducer";
@@ -11,6 +11,10 @@ const Navbar = () => {
   const {id} = useTask();
   const dispatch = useDispatch();
   const [user, setUser] = useState({});
+
+  const { pathname } = useLocation();
+  console.log(pathname);
+
   const logout = () => {
     localStorage.setItem("auth", false);
     localStorage.setItem("id", 0);
@@ -47,7 +51,7 @@ const Navbar = () => {
             <li>
               <Link
               to="/home"
-              className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 "
+              className={`block py-2 pl-3 pr-4  text-lg md:hover:text-red-600 md:p-0 ${pathname==='/home'? 'text-red-600 font-bold' : 'text-gray-600 font-medium'}`}
             >
               Home
               </Link>
@@ -55,17 +59,17 @@ const Navbar = () => {
             <li>
               <Link
               to="/tasks"
-              className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 "
+              className={`block py-2 pl-3 pr-4  text-lg md:hover:text-red-600 md:p-0 ${pathname==='/tasks'? 'text-red-600 font-bold' : 'text-gray-600 font-medium'}`}
             >
-              Tasks
+              Board
               </Link>
             </li>
             <li>
               <Link
                 to="/temp"
-                className="navlink block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 "
-              >
-                Temp
+                className={`block py-2 pl-3 pr-4  text-lg md:hover:text-red-600 md:p-0 ${pathname==='/temp'? 'text-red-600 font-bold' : 'text-gray-600 font-medium'}`}
+                >
+                Timer
               </Link>
             </li>
           </ul>
